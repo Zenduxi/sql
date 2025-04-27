@@ -54,7 +54,10 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Zhen's answer:
+The architecture that will overwrite the previous address with the new one is Type 1. The CUSTOMER_ADDRESS table can have customer_id, customer_address, postal_code, province_state and country columns. No history address is stored but only the current one.
+
+The architecture that will retain changes is Type 2. A customer can have different addresses at different time. To keep track of the changes, the CUSTOMER_ADDRESS table can have a timestamp column for the entry time of the address, in addition to the aforementioned columns. The latest one indicates the current address. 
 ```
 
 ***
